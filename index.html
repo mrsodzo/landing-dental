@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дент-Люкс — Стоматологическая клиника</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-tooth"></i>
+        <span>Дент-Люкс</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#doctors" class="nav-link">Врачи</a>
+        <a href="#reviews" class="nav-link">Отзывы</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+78001234567" class="phone-link">8 (800) 123-45-67</a>
+        <a href="#booking" class="btn btn-primary">Записаться</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1>Стоматология без страха и очередей</h1>
+          <p>Первичная консультация и диагностика — бесплатно</p>
+          <a href="#booking" class="btn btn-large">Записаться на приём</a>
+        </div>
+        <div class="hero-img">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Интерьер клиники">
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
+            <h3>Терапия</h3>
+            <p class="card-price">от 1 500 ₽</p>
+            <p>Лечение кариеса и его осложнений</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-brush"></i></div>
+            <h3>Гигиена и отбеливание</h3>
+            <p class="card-price">от 2 000 ₽</p>
+            <p>Профессиональная чистка и отбеливание</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-teeth"></i></div>
+            <h3>Имплантация</h3>
+            <p class="card-price">от 25 000 ₽</p>
+            <p>Восстановление зубов на имплантах</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-x-ray"></i></div>
+            <h3>Ортодонтия</h3>
+            <p class="card-price">от 20 000 ₽</p>
+            <p>Брекеты и капы для выравнивания зубов</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fa-solid fa-user"></i></div>
+            <h3>Детская стоматология</h3>
+            <p class="card-price">от 1 000 ₽</p>
+            <p>Атравматичное лечение для детей</p>
+          </article>
+          <article class="card card-more">
+            <div class="card-icon"><i class="fa-solid fa-circle-plus"></i></div>
+            <h3>Ещё услуги</h3>
+            <p>Протезирование, удаление, лечение десен и др.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="why-us">
+      <div class="container">
+        <h2 class="section-title">Почему мы</h2>
+        <div class="features">
+          <div class="feature">
+            <i class="fa-solid fa-shield-virus"></i>
+            <h3>Стерилизация и современное оборудование</h3>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-certificate"></i>
+            <h3>Гарантия на лечение</h3>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Врачи с опытом от 8 лет</h3>
+          </div>
+          <div class="feature">
+            <i class="fa-solid fa-credit-card"></i>
+            <h3>Рассрочка и оплата картой</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Doctors -->
+    <section class="doctors" id="doctors">
+      <div class="container">
+        <h2 class="section-title">Наши врачи</h2>
+        <div class="cards-grid">
+          <article class="card doctor-card">
+            <div class="doctor-img">
+              <img src="https://images.unsplash.com/photo-1758691462651-611d730c5272?w=400&q=80&auto=format&fit=crop" alt="Иванова Анна">
+            </div>
+            <h3>Иванова Анна</h3>
+            <p class="specialty">Терапевт, стаж 12 лет</p>
+          </article>
+          <article class="card doctor-card">
+            <div class="doctor-img">
+              <img src="https://images.unsplash.com/photo-1592671963996-0b4616e9f042?w=400&q=80&auto=format&fit=crop" alt="Петров Сергей">
+            </div>
+            <h3>Петров Сергей</h3>
+            <p class="specialty">Хирург-имплантолог, стаж 15 лет</p>
+          </article>
+          <article class="card doctor-card">
+            <div class="doctor-img">
+              <img src="https://images.unsplash.com/photo-1700308436362-04fd247cc35d?w=400&q=80&auto=format&fit=crop" alt="Сидорова Мария">
+            </div>
+            <h3>Сидорова Мария</h3>
+            <p class="specialty">Ортодонт, стаж 10 лет</p>
+          </article>
+          <article class="card doctor-card">
+            <div class="doctor-img">
+              <img src="https://images.unsplash.com/photo-1758691463393-a2aa9900af8a?w=400&q=80&auto=format&fit=crop" alt="Кузнецов Дмитрий">
+            </div>
+            <h3>Кузнецов Дмитрий</h3>
+            <p class="specialty">Детский стоматолог, стаж 7 лет</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking" id="booking">
+      <div class="container booking-container">
+        <div class="booking-text">
+          <h2 class="section-title">Запись на приём</h2>
+          <p>Оставьте заявку, и мы перезвоним для подтверждения в течение 5 минут.</p>
+        </div>
+        <form class="form" id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" placeholder="Введите имя" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Услуга</label>
+              <select id="service" name="service" required>
+                <option value="">Выберите услугу</option>
+                <option value="Терапия">Терапия</option>
+                <option value="Гигиена и отбеливание">Гигиена и отбеливание</option>
+                <option value="Имплантация">Имплантация</option>
+                <option value="Ортодонтия">Ортодонтия</option>
+                <option value="Детская стоматология">Детская стоматология</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="doctor">Врач (необязательно)</label>
+              <select id="doctor" name="doctor">
+                <option value="">Выберите врача</option>
+                <option value="Иванова Анна">Иванова Анна</option>
+                <option value="Петров Сергей">Петров Сергей</option>
+                <option value="Сидорова Мария">Сидорова Мария</option>
+                <option value="Кузнецов Дмитрий">Кузнецов Дмитрий</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="time">Удобное время</label>
+            <select id="time" name="time" required>
+              <option value="">Выберите время</option>
+              <option value="morning">Утро</option>
+              <option value="day">День</option>
+              <option value="evening">Вечер</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-submit">Записаться</button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <h2 class="section-title">Отзывы пациентов</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>«Отличная клиника! Врачи внимательные, процедура прошла безболезненно.»</p>
+            <div class="review-author">— Елена К.</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>«Делала имплантацию, всё прошлом на высшем уровне. Рекомендую!»</p>
+            <div class="review-author">— Андрей М.</div>
+          </div>
+          <div class="review-card">
+            <div class="stars">★★★★☆</div>
+            <p>«Доброжелательный персонал, современное оборудование. Цены адекватные.»</p>
+            <div class="review-author">— Ольга С.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map and Contacts -->
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contacts-grid">
+          <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> г. Москва, ул. Примерная, д. 10</p>
+            <p><i class="fa-solid fa-phone"></i> <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+            <p><i class="fa-solid fa-clock"></i> Пн–Пт: 9:00–21:00, Сб: 10:00–18:00</p>
+            <div class="socials">
+              <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="map-placeholder">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617300%2C55.755826&z=12" title="Карта" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>© 2025 Дент-Люкс. ИП Сидоров А.В. ИНН 770123456789</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

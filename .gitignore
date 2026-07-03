@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Secrets / local config
+.env
+js/config.js
+
+# Build / dist
+dist/
+build/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*.log
