@@ -28,6 +28,8 @@
 
 Откройте `index.html` в браузере. Для продакшна достаточно hosted-статики (GitHub Pages, Vercel и т.д.).
 
+**[Демонстрация: https://landing-dental.netlify.app](https://landing-dental.netlify.app)**
+
 ## Настройка Telegram-уведомлений
 
 1. Создайте бота через [@BotFather](https://t.me/BotFather) и получите `BOT_TOKEN`
