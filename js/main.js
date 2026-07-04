@@ -29,19 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Phone mask +7 (___) ___-__-__
   const phoneInput = document.getElementById('phone');
   if (phoneInput) {
+    const formatPhone = (digits) => {
+      if (!digits) return '';
+      if (digits[0] === '8') digits = '7' + digits.slice(1);
+      if (digits.length <= 1) return '+' + digits;
+      if (digits.length <= 4) return '+7 (' + digits.slice(1);
+      if (digits.length <= 7) return '+7 (' + digits.slice(1, 4) + ') ' + digits.slice(4);
+      if (digits.length <= 9) return '+7 (' + digits.slice(1, 4) + ') ' + digits.slice(4, 7) + '-' + digits.slice(7);
+      return '+7 (' + digits.slice(1, 4) + ') ' + digits.slice(4, 7) + '-' + digits.slice(7, 9) + '-' + digits.slice(9);
+    };
+
+    phoneInput.addEventListener('focus', () => {
+      const len = phoneInput.value.length;
+      phoneInput.setSelectionRange(len, len);
+    });
+
     phoneInput.addEventListener('input', (e) => {
       let val = e.target.value.replace(/\D/g, '').slice(0, 11);
       if (!val) { e.target.value = ''; return; }
       if (val[0] === '8') val = '7' + val.slice(1);
-      if (val.length <= 1) e.target.value = '+' + val;
-      else if (val.length <= 4) e.target.value = '+7 (' + val.slice(1);
-      else if (val.length <= 7) e.target.value = '+7 (' + val.slice(1, 4) + ') ' + val.slice(4);
-      else if (val.length <= 9) e.target.value = '+7 (' + val.slice(1, 4) + ') ' + val.slice(4, 7) + '-' + val.slice(7);
-      else e.target.value = '+7 (' + val.slice(1, 4) + ') ' + val.slice(4, 7) + '-' + val.slice(7, 9) + '-' + val.slice(9);
+      e.target.value = formatPhone(val);
     });
+
     phoneInput.addEventListener('blur', (e) => {
       const val = e.target.value.replace(/\D/g, '');
-      e.target.value = val ? '+7 (' + val.slice(1,4) + ') ' + val.slice(4,7) + '-' + val.slice(7,9) + '-' + val.slice(9) : '';
+      e.target.value = val ? formatPhone(val) : '';
     });
   }
 
@@ -68,12 +80,21 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ chat_id: chatId, text })
         });
-        if (!res.ok) throw new Error('Network error');
-        alert('Заявка отправлена! Мы скоро перезвоним.');
+        const data = await res.json();
+        if (!res.ok || !data.ok) {
+          throw new Error(data.description || 'Telegram API error');
+        }
+        const successMsg = document.createElement('p');
+        successMsg.className = 'form-feedback form-feedback--success';
+        successMsg.textContent = 'Заявка отправлена! Мы скоро перезвоним.';
+        form.appendChild(successMsg);
         form.reset();
+        setTimeout(() => successMsg.remove(), 5000);
       } catch (err) {
-        // Fallback: mailto link (если Telegram не настроен)
-        alert('Ошибка отправки. Пожалуйста, позвоните нам по номеру 8 (800) 123-45-67.');
+        const fallback = document.createElement('p');
+        fallback.className = 'form-feedback form-feedback--error';
+        fallback.innerHTML = 'Ошибка отправки. Пожалуйста, позвоните нам по номеру <a href="tel:+78001234567">8 (800) 123-45-67</a>.';
+        form.appendChild(fallback);
       }
     });
   }
