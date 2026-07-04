@@ -39,16 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
       return '+7 (' + digits.slice(1, 4) + ') ' + digits.slice(4, 7) + '-' + digits.slice(7, 9) + '-' + digits.slice(9);
     };
 
-    phoneInput.addEventListener('focus', () => {
-      const len = phoneInput.value.length;
-      phoneInput.setSelectionRange(len, len);
-    });
+    const setCaret = (input, pos) => {
+      const len = input.value.length;
+      input.setSelectionRange(pos > len ? len : pos, pos > len ? len : pos);
+    };
 
     phoneInput.addEventListener('input', (e) => {
-      let val = e.target.value.replace(/\D/g, '').slice(0, 11);
-      if (!val) { e.target.value = ''; return; }
+      const caret = phoneInput.selectionStart;
+      const oldVal = phoneInput.value;
+      let digitsBefore = 0;
+      for (let i = 0; i < caret && i < oldVal.length; i++) {
+        if (/\d/.test(oldVal[i])) digitsBefore++;
+      }
+
+      let val = phoneInput.value.replace(/\D/g, '').slice(0, 11);
+      if (!val) { phoneInput.value = ''; return; }
       if (val[0] === '8') val = '7' + val.slice(1);
-      e.target.value = formatPhone(val);
+      phoneInput.value = formatPhone(val);
+
+      let newCaret = phoneInput.value.length;
+      let seen = 0;
+      for (let i = 0; i < phoneInput.value.length; i++) {
+        if (/\d/.test(phoneInput.value[i])) seen++;
+        if (seen > digitsBefore) { newCaret = i; break; }
+      }
+      setCaret(phoneInput, newCaret);
     });
 
     phoneInput.addEventListener('blur', (e) => {
