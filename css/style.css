@@ -78,6 +78,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   color: var(--color-text);
+  white-space: nowrap;
 }
 .burger {
   display: none;
